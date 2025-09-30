@@ -1,0 +1,9 @@
+:root {
+    --color-white: rgba(255, 255, 255, 1);
+    --color-gray: rgb(173, 170, 170);
+
+    --grid__devMode-4: repeating-linear-gradient(90deg,#0000 -1rem,#0000 0%,#ff450033 0,#ff450033 calc(25% - .75rem) );
+    --grid__devMode-8: repeating-linear-gradient(90deg,#0000 -1rem,#0000 0%,#ff450033 0,#ff450033 calc(12.5% - .875rem) );
+    --grid__devMode-12-md: repeating-linear-gradient(90deg,#0000 -1rem,#0000 0%,#ff450033 0,#ff450033 calc(8.3% - .9rem) );
+    --grid__devMode-12-lg: repeating-linear-gradient(90deg,#0000 -1.5rem,#0000 0%,#ff450033 0,#ff450033 calc(8.3% - 1.35rem) );
+}

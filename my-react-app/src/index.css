@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    color: var(--color-white);
+
+    font-size: 20px;
+
+    /* background: linear-gradient(90deg, rgba(26, 26, 46, 1) 0%, rgba(39, 55, 70, 1) 100%); */
+}
+
+a {
+    text-decoration: none;
+}
+

@@ -1,0 +1,207 @@
+.ContainerThreeSection {
+  /* padding: 100px 220px;
+  margin-top: -5vh; */
+  padding: 80px 220px;
+  margin-top: -6vh;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background: linear-gradient(135deg, rgba(27, 0, 57, 0.95) 0%, rgba(10, 30, 63, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.ContainerThreeSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,215,0,0.6), rgba(72,85,246,0.4), transparent);
+  box-shadow: 0 0 30px rgba(255,215,0,0.4);
+}
+
+.ContentWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.SectionTitle {
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.LeftTextRussianMap {
+  flex: 1;
+  max-width: 500px;
+  color: rgba(255,255,255,0.95);
+  z-index: 3;
+}
+
+.LeftTextRussianMap p {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 2rem;
+}
+
+.CtaButton {
+  display: inline-block;
+  padding: 14px 36px;
+  background: linear-gradient(135deg, #4855f6 0%, #2346ac 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 8px 30px rgba(72,85,246,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.CtaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s;
+}
+
+.CtaButton:hover::before {
+  left: 100%;
+}
+
+.CtaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(72,85,246,0.6);
+}
+
+.MapContainer {
+  flex: 1.2;
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ImgRussianMap {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 30px;
+  box-shadow: 
+    0 30px 80px rgba(0,0,0,0.6),
+    0 0 60px rgba(255,215,0,0.3),
+    inset 0 0 40px rgba(255,255,255,0.1);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: saturate(1.2) contrast(1.1);
+}
+
+.ImgRussianMap:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 
+    0 40px 100px rgba(0,0,0,0.7),
+    0 0 80px rgba(255,215,0,0.5),
+    inset 0 0 60px rgba(255,255,255,0.15);
+}
+
+.GlowOverlay {
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,215,0,0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: glowPulse 3s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes glowPulse {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.3); }
+}
+
+.Particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.Particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255,215,0,0.9);
+  border-radius: 50%;
+  animation: float 4s ease-in-out infinite;
+}
+
+.Particle:nth-child(1) { top: 20%; left: 30%; animation-delay: 0s; }
+.Particle:nth-child(2) { top: 60%; left: 70%; animation-delay: 1s; }
+.Particle:nth-child(3) { top: 40%; left: 10%; animation-delay: 2s; }
+.Particle:nth-child(4) { top: 80%; left: 50%; animation-delay: 3s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .ContainerThreeSection { padding: 80px 120px; }
+  .ContentWrapper { gap: 3rem; }
+}
+
+@media (max-width: 1100px) {
+  .ContainerThreeSection { padding: 60px 80px; }
+  .MapContainer { height: 400px; }
+}
+
+@media (max-width: 900px) {
+  .ContentWrapper { 
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .LeftTextRussianMap { 
+    max-width: 100%;
+    order: -1;
+  }
+  
+  .MapContainer { 
+    height: 350px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .ContainerThreeSection { padding: 50px 20px; }
+  .MapContainer { height: 280px; }
+  .LeftTextRussianMap p { font-size: 1.1rem; }
+}

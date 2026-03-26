@@ -1,0 +1,259 @@
+.ContainerFourSection {
+  /* padding: 80px 220px;
+  margin-top: -4vh; */
+    padding: 34px 220px;
+    margin-top: -6vh;
+
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background: linear-gradient(135deg, 
+    rgba(26, 26, 46, 0.95) 0%, 
+    rgba(39, 55, 70, 0.95) 50%, 
+    rgba(72, 85, 246, 0.15) 100%);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.ContainerFourSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,215,0,0.6), transparent);
+  box-shadow: 0 0 30px rgba(255,215,0,0.4);
+}
+
+.ContentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.HeadingGroup {
+  animation: fadeInUp 1s ease-out;
+}
+
+.MainHeading {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.03em;
+  text-shadow: 0 0 40px rgba(255,215,0,0.5);
+}
+
+.SubHeading {
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+  margin: 0;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.ctaButton {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 20px 48px;
+  background: linear-gradient(135deg, #4855f6 0%, #2346ac 100%);
+  color: white;
+  border: none;
+  border-radius: 60px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 
+    0 12px 40px rgba(72,85,246,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.3);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.7s;
+}
+
+.ctaButton:hover::before {
+  left: 100%;
+}
+
+.ctaButton:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 
+    0 25px 60px rgba(72,85,246,0.7),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.ctaButton:active {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.IconArrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .IconArrow {
+  transform: translateX(8px);
+}
+
+.StatsGrid {
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+  width: 100%;
+  max-width: 700px;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.StatItem {
+  text-align: center;
+  position: relative;
+}
+
+.StatNumber {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.StatLabel {
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.FloatingElements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.FloatingOrb1 {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(72,85,246,0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float1 6s ease-in-out infinite;
+  filter: blur(20px);
+}
+
+.FloatingOrb2 {
+  position: absolute;
+  bottom: 20%;
+  right: 15%;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float2 8s ease-in-out infinite;
+  filter: blur(15px);
+}
+
+.FloatingOrb3 {
+  position: absolute;
+  top: 60%;
+  right: 30%;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float3 7s ease-in-out infinite;
+  filter: blur(10px);
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-20px) rotate(120deg); }
+  66% { transform: translateY(10px) rotate(240deg); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-15px) scale(1.1); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(10px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .ContainerFourSection { padding: 60px 120px; }
+}
+
+@media (max-width: 1100px) {
+  .ContainerFourSection { padding: 50px 80px; }
+  .StatsGrid { gap: 2rem; }
+}
+
+@media (max-width: 768px) {
+  .StatsGrid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .ContentWrapper {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .ContainerFourSection { padding: 40px 20px; }
+  .ctaButton { 
+    padding: 16px 32px;
+    font-size: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

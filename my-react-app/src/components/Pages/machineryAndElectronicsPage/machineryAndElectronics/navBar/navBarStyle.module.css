@@ -1,0 +1,85 @@
+.navBarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 10px 50px;
+}
+
+/* Логотип */
+.logo {
+    /* width: 50%; */
+    display: flex;
+    align-items: center;
+}
+
+.logo h2 {
+    font-size: 2rem;
+    color: var(--color-yellow);
+}
+
+/* Поиск */
+.searchAll {
+    display: flex;
+    min-width: 40%;
+    max-width: 40%;
+    height: 60px;
+    /* border-radius: 15px; */
+    text-align: center;
+    align-items: center;
+    
+}
+.searchInput {
+    display: flex;
+    min-width: 80%;
+    max-width: 80%;
+    height: 60px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    text-align: center;
+    align-items: center;
+    border: 0;
+    background: var(--color-lightGray);
+}
+.searchBtn{
+    width: 10%;
+    height: 60px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 0;
+    background: blue;
+}
+
+/* Панель инструментов */
+.panelTool {
+    display: flex;
+    align-items: center;
+}
+.chosenOne, .profile {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: var(--color-lightGray);
+    border-radius: 15px;
+}
+.basket {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 150px;
+    height: 60px;
+    background: blue;
+    border-radius: 15px;
+}
+.basket span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+

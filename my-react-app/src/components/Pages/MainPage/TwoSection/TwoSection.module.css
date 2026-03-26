@@ -1,130 +1,376 @@
-/* AboutUs */
+/* Основной контейнер */
 .ContainerTwoSection {
-    /* display: flex; */
-    /* justify-content: space-between; */
-
-
-    padding: 34px 220px;
-    margin-top: -5vh;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    background: linear-gradient(125deg, rgba(7, 82, 61, 1) 0%, rgba(20, 33, 19, 1) 81%);
-    /* background: var(--grid__devMode-4); */
+  padding: 80px 220px;
+  margin-top: -5vh;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(39, 55, 70, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
 }
 
+.ContainerTwoSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,215,0,0.5), transparent);
+  box-shadow: 0 0 20px rgba(255,215,0,0.3);
+}
+
+/* AboutUs */
 .AboutUs {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  padding: 4rem 0;
 }
 
-.AboutUsText{
-    max-width: 590px;
-    margin-right: 40px;
+.AboutUsText {
+  max-width: 600px;
+  color: rgba(255,255,255,0.95);
 }
 
 .AboutUsText h2 {
-    font-size: 50px;
-    line-height: 1.8;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.AboutUsText p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+  margin-top: 1rem;
 }
 
 .Image {
-    width: 600px;
-    height: 350px;
-    object-fit: cover;
-    border: 10px solid var(--color-white);
-    border-radius: 10px;
-    gap: 100%;
+  width: 650px;
+  height: 400px;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 24px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.6);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.Image:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 35px 90px rgba(72,85,246,0.4);
+  border-color: rgba(72,85,246,0.5);
 }
 
 .ImgTwoSection {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Opportunities */
 .OpportunitiesHeading {
-    text-align: center;
+  text-align: center;
+  padding: 6rem 0 3rem;
 }
 
 .OpportunitiesHeading h2 {
-    padding-top: 20px;
-    font-size: 40px;
-    font-weight: 600;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
 .OpportunitiesHeading p {
-    color: var(--color-gray);
+  color: rgba(255,255,255,0.85);
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .Opportunities {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
 }
-
 
 /* Платежи, Идентификация, Доставка */
 .Payments, .Authentication, .Shipping {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    gap: 24px;
-  
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.Payments::before, .Authentication::before, .Shipping::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4855f6, #FFD700);
+  border-radius: 24px 24px 0 0;
+}
+
+.Payments:hover, .Authentication:hover, .Shipping:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(72,85,246,0.3);
+  border-color: rgba(72,85,246,0.4);
 }
 
 .Payments h3, .Authentication h3, .Shipping h3 {
-    padding-top: 40px;
-    font-weight: 600;
-    text-align: left;
+  padding-top: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 1.5rem;
+  z-index: 2;
+  position: relative;
 }
 
 .Payments img, .Authentication img, .Shipping img {
-    width: 400px;
-    height: 150px;
-    border: solid var(--color-gray) 2px;
-    border-radius: 10px;
+  width: 160px;
+  height: 90px;
+  object-fit: contain;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
+  padding: 1rem;
+  background: rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-/* Платежи, Идентификация, Доставка */
+.Payments img:hover, .Authentication img:hover, .Shipping img:hover {
+  border-color: #FFD700;
+  box-shadow: 0 15px 40px rgba(255,215,0,0.4);
+  transform: scale(1.05);
+}
 
-/* RoadMap */
-
+/* RoadMap - ОРИГИНАЛЬНАЯ АНИМАЦИЯ БЕЗ ИЗМЕНЕНИЙ */
 .RoadMapText {
-    /* display: flex; */
-    /* justify-content: space-between; */
+  padding: 6rem 0 4rem;
+}
 
-    padding-top: 40px;
+.HeadingRoadMap {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.HeadingRoadMap h2 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.HeadingRoadMap p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.3rem;
 }
 
 .RoadMap {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto 3rem;
+  position: relative;
 }
 
 .Circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--color-gray);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4855f6, #2346ac);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: 0 12px 35px rgba(72,85,246,0.5);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 2;
+  position: relative;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
+.Circle:hover {
+  transform: scale(1.2) rotate(360deg);
+  box-shadow: 0 20px 50px rgba(72,85,246,0.7);
 }
 
 .LineRoadMap {
-    position: absolute;
-    top: 50%;
-    left: 1%;
-    height: 0px;
-    margin-top: -2px;
-    border: 4px solid #00000037;
-    width: 98%;
-    background: #9cfa806b;
+  flex: 1;
+  height: 5px;
+  background-color: rgba(255,255,255,0.15);
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+  border-radius: 3px;
 }
 
-/* RoadMap */
+.LineRoadMap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: #9cfa80;
+  transition: width 0.4s cubic-bezier(.7,.3,.5,1);
+  transition-delay: 0s;
+  z-index: 2;
+}
+
+/* ОРИГИНАЛЬНЫЕ АНИМАЦИИ ПОЛОСОК - БЕЗ ИЗМЕНЕНИЙ */
+.RoadMap:has(.Circle:nth-child(3):hover) .LineRoadMap:nth-child(2)::before {
+  width: 100%;
+  transition-delay: 0s;
+}
+.RoadMap .LineRoadMap:nth-child(2)::before {
+  transition-delay: 0s;
+}
+
+.RoadMap:has(.Circle:nth-child(5):hover) .LineRoadMap:nth-child(2)::before {
+  width: 100%;
+  transition-delay: 0s;
+}
+.RoadMap:has(.Circle:nth-child(5):hover) .LineRoadMap:nth-child(4)::before {
+  width: 100%;
+  transition-delay: 0.5s;
+}
+.RoadMap .LineRoadMap:nth-child(2)::before {
+  transition-delay: 0.5s;
+}
+.RoadMap .LineRoadMap:nth-child(4)::before {
+  transition-delay: 0s;
+}
+
+.RoadMap:has(.Circle:nth-child(7):hover) .LineRoadMap:nth-child(2)::before {
+  width: 100%;
+  transition-delay: 0s;
+}
+.RoadMap:has(.Circle:nth-child(7):hover) .LineRoadMap:nth-child(4)::before {
+  width: 100%;
+  transition-delay: 0.5s;
+}
+.RoadMap:has(.Circle:nth-child(7):hover) .LineRoadMap:nth-child(6)::before {
+  width: 100%;
+  transition-delay: 1s;
+}
+.RoadMap .LineRoadMap:nth-child(2)::before {
+  transition-delay: 1s;
+}
+.RoadMap .LineRoadMap:nth-child(4)::before {
+  transition-delay: 0.5s;
+}
+.RoadMap .LineRoadMap:nth-child(6)::before {
+  transition-delay: 0s;
+}
+
+.TextUnderCircle {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.TextForCircle {
+  flex: 1;
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1700px) {
+  .AboutUs { 
+    flex-direction: column; 
+    text-align: center; 
+    gap: 3rem;
+  }
+  .AboutUsText { 
+    margin: 0 0 2rem 0; 
+    max-width: 100%;
+  }
+  .Opportunities { 
+    flex-direction: column; 
+    gap: 2rem;
+  }
+  .Payments, .Authentication, .Shipping { 
+    text-align: center;
+  }
+}
+
+@media (max-width: 1400px) {
+  .ContainerTwoSection { padding: 60px 120px; }
+}
+
+@media (max-width: 1300px) {
+  .Image { 
+    width: 100%; 
+    max-width: 500px; 
+    height: 300px; 
+  }
+}
+
+@media (max-width: 1100px) {
+  .ContainerTwoSection { padding: 50px 80px; }
+  .Payments img, .Authentication img, .Shipping img { 
+    width: 140px; 
+    height: 80px; 
+  }
+  .Circle { 
+    width: 55px; 
+    height: 55px; 
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 840px) {
+  .TextUnderCircle { 
+    flex-direction: column; 
+    gap: 1.5rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .ContainerTwoSection { padding: 40px 20px; }
+  .Circle { 
+    width: 50px; 
+    height: 50px; 
+    font-size: 1.2rem;
+  }
+}

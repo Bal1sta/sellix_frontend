@@ -1,0 +1,249 @@
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, rgb(26, 26, 46) 0%, rgb(39, 55, 70) 100%);
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 40px 32px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.brand img {
+  width: 44px;
+  height: 44px;
+}
+
+.brand span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.title {
+  font-size: 1.3rem;
+  color: var(--color-black);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: rgb(110, 110, 120);
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.4;
+}
+
+.providers {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.provider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--color-gray);
+  border-radius: 12px;
+  background: var(--color-white);
+  color: var(--color-black);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.provider:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  border-color: var(--color-black);
+}
+
+.provider:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.provider img {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  color: rgb(150, 150, 160);
+  font-size: 0.7rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--color-lightGray);
+}
+
+.adminLink {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgb(110, 110, 120);
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+}
+
+.adminLink:hover {
+  color: var(--color-black);
+  text-decoration: underline;
+}
+
+.error {
+  margin-top: 18px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(220, 53, 69, 0.1);
+  color: rgb(176, 0, 32);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.note {
+  margin-top: 20px;
+  font-size: 0.68rem;
+  color: rgb(150, 150, 160);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Выбор роли */
+.roleGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.roleCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 18px;
+  border: 1px solid var(--color-gray);
+  border-radius: 14px;
+  background: var(--color-white);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.12s ease, transform 0.12s ease;
+}
+
+.roleCard:hover {
+  border-color: var(--color-black);
+  transform: translateY(-2px);
+}
+
+.roleCard h3 {
+  color: var(--color-black);
+  font-size: 1.05rem;
+}
+
+.roleCard p {
+  color: rgb(110, 110, 120);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+/* Поля формы (админ-вход) */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-size: 0.75rem;
+  color: var(--color-black);
+}
+
+.field input {
+  padding: 12px 14px;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--color-black);
+  background: var(--color-white);
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--color-black);
+}
+
+.submit {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.backLink {
+  display: block;
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgb(110, 110, 120);
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.backLink:hover {
+  color: var(--color-black);
+  text-decoration: underline;
+}
+
+@media (max-width: 520px) {
+  .roleGrid {
+    grid-template-columns: 1fr;
+  }
+}

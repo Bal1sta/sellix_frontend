@@ -1,0 +1,350 @@
+.shell {
+  min-height: 100vh;
+  background: rgb(245, 246, 248);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-lightGray);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  width: 34px;
+  height: 34px;
+}
+
+.brand span {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.userEmail {
+  font-size: 0.78rem;
+  color: rgb(110, 110, 120);
+}
+
+.logout {
+  padding: 8px 16px;
+  border: 1px solid var(--color-gray);
+  border-radius: 9px;
+  background: var(--color-white);
+  color: var(--color-black);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.logout:hover {
+  border-color: var(--color-black);
+}
+
+.body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: var(--color-black);
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--color-lightGray);
+}
+
+.tab {
+  padding: 10px 18px;
+  border: none;
+  background: none;
+  color: rgb(110, 110, 120);
+  font-size: 0.88rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab:hover {
+  color: var(--color-black);
+}
+
+.tabActive {
+  color: var(--color-black);
+  font-weight: 600;
+  border-bottom-color: var(--color-black);
+}
+
+.content {
+  display: block;
+}
+
+/* Карточки и сетки */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-lightGray);
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+  color: var(--color-black);
+  margin-bottom: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat {
+  background: var(--color-white);
+  border: 1px solid var(--color-lightGray);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.statLabel {
+  font-size: 0.72rem;
+  color: rgb(130, 130, 140);
+  margin-bottom: 8px;
+}
+
+.statValue {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* Поля формы */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.field label {
+  font-size: 0.76rem;
+  color: var(--color-black);
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 11px 13px;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: var(--color-black);
+  background: var(--color-white);
+  font-family: inherit;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--color-black);
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.row > * {
+  flex: 1;
+  min-width: 160px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 11px;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnGhost {
+  padding: 10px 16px;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+  background: var(--color-white);
+  color: var(--color-black);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btnGhost:hover {
+  border-color: var(--color-black);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-white);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--color-lightGray);
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 0.8rem;
+  color: var(--color-black);
+  border-bottom: 1px solid var(--color-lightGray);
+}
+
+.table th {
+  background: rgb(250, 250, 251);
+  font-weight: 600;
+  color: rgb(90, 90, 100);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.badgeGreen {
+  background: rgba(34, 160, 90, 0.12);
+  color: rgb(20, 120, 65);
+}
+
+.badgeGray {
+  background: rgba(120, 120, 130, 0.12);
+  color: rgb(90, 90, 100);
+}
+
+.badgeYellow {
+  background: rgba(235, 201, 14, 0.18);
+  color: rgb(150, 120, 0);
+}
+
+.badgeRed {
+  background: rgba(220, 53, 69, 0.12);
+  color: rgb(176, 0, 32);
+}
+
+.error {
+  margin: 12px 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(220, 53, 69, 0.1);
+  color: rgb(176, 0, 32);
+  font-size: 0.78rem;
+}
+
+.success {
+  margin: 12px 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(34, 160, 90, 0.12);
+  color: rgb(20, 120, 65);
+  font-size: 0.78rem;
+}
+
+.empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: rgb(130, 130, 140);
+  font-size: 0.85rem;
+}
+
+.muted {
+  color: rgb(130, 130, 140);
+  font-size: 0.8rem;
+}
+
+.productCard {
+  background: var(--color-white);
+  border: 1px solid var(--color-lightGray);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.productThumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--color-lightGray);
+}
+
+.productBody {
+  padding: 14px;
+}
+
+.productName {
+  font-size: 0.9rem;
+  color: var(--color-black);
+  margin-bottom: 6px;
+}
+
+.productPrice {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 14px 18px;
+  }
+  .body {
+    padding: 24px 16px 48px;
+  }
+}

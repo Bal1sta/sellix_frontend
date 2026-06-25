@@ -1,0 +1,84 @@
+.wrap {
+  min-height: 100vh;
+  background: rgb(245, 246, 248);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: #fff;
+  border-bottom: 1px solid var(--color-lightGray);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.brand { display: flex; align-items: center; gap: 10px; background: none; border: none; cursor: pointer; }
+.brand img { width: 32px; height: 32px; }
+.brand span { font-size: 1.3rem; font-weight: 700; color: var(--color-black); }
+.back {
+  padding: 8px 18px; border: 1px solid var(--color-gray); border-radius: 9px;
+  background: #fff; color: var(--color-black); font-size: .82rem; cursor: pointer; font-family: inherit;
+}
+.back:hover { border-color: var(--color-black); }
+
+.doc {
+  flex: 1;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+  background: #fff;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--color-lightGray);
+}
+
+.title { font-size: 2rem; color: var(--color-black); margin-bottom: 8px; }
+.meta { font-size: .8rem; color: rgb(140, 145, 155); margin-bottom: 36px; }
+
+.section { margin-bottom: 28px; }
+.heading { font-size: 1.15rem; color: var(--color-black); margin-bottom: 12px; font-weight: 600; }
+.para { font-size: .9rem; color: rgb(60, 65, 75); line-height: 1.7; margin-bottom: 12px; }
+.list { margin: 8px 0 12px; padding-left: 0; }
+.list li {
+  position: relative; padding-left: 22px; margin-bottom: 9px;
+  font-size: .88rem; color: rgb(60, 65, 75); line-height: 1.6;
+}
+.list li::before {
+  content: "—"; position: absolute; left: 0; color: var(--color-yellow); font-weight: 700;
+}
+
+.docNav {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--color-lightGray);
+}
+.docNav h3 { font-size: .95rem; color: var(--color-black); margin-bottom: 14px; }
+.docNavLinks { display: flex; flex-direction: column; gap: 10px; }
+.docNavLinks button {
+  text-align: left; background: none; border: none; padding: 0; cursor: pointer;
+  font-size: .88rem; color: rgb(60, 120, 200); font-family: inherit; transition: color .12s;
+}
+.docNavLinks button:hover { color: var(--color-black); text-decoration: underline; }
+
+.footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 24px 40px; background: rgb(20, 20, 36); flex-wrap: wrap; gap: 10px;
+}
+.footer span { font-size: .78rem; color: rgb(140, 145, 160); }
+.footer a { font-size: .78rem; color: rgb(155, 160, 175); text-decoration: none; }
+.footer a:hover { color: #fff; }
+
+.empty { padding: 80px 20px; text-align: center; color: rgb(130, 130, 140); }
+
+@media (max-width: 640px) {
+  .header { padding: 14px 18px; }
+  .doc { padding: 32px 18px 48px; margin: 16px; }
+  .title { font-size: 1.5rem; }
+  .footer { padding: 20px 18px; }
+}

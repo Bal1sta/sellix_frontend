@@ -1,0 +1,160 @@
+.groupTitle {
+  color: #6f7772;
+}
+
+.checkboxLabel {
+  color: #2f3a38;
+}
+
+.sidebar {
+  position: sticky;
+  top: 110px;
+}
+
+.group {
+  margin-bottom: 34px;
+}
+
+.groupTitle {
+  margin: 0 0 16px;
+  font-size: 11px;
+  letter-spacing: 2.2px;
+  color: #8a938e;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #394443;
+  cursor: pointer;
+}
+
+.checkboxLabel input {
+  width: 14px;
+  height: 14px;
+  accent-color: #56695f;
+}
+
+.checkboxLabel span {
+  color: #56695f;
+}
+
+.sizeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 42px);
+  gap: 8px;
+}
+
+.sizeButton {
+  width: 42px;
+  height: 32px;
+  border: 1px solid #d9dfda;
+  background: transparent;
+  color: #52605a;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.sizeButtonActive {
+  background-color: #56695f;
+  border-color: #56695f;
+  color: #ffffff;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #6f7772;
+}
+.priceRow span {
+    color: #52605a;
+}
+
+.rangeLine {
+  width: 100%;
+  height: 2px;
+  background-color: #d9dfda;
+  position: relative;
+}
+
+.rangeLine::before,
+.rangeLine::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #56695f;
+  transform: translateY(-50%);
+}
+
+.rangeLine::before {
+  left: 0;
+}
+
+.rangeLine::after {
+  right: 0;
+}
+
+.priceInputs {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.priceInput {
+  width: 100%;
+  height: 36px;
+  border: 1px solid #d9dfda;
+  background: transparent;
+  color: #52605a;
+  font-size: 12px;
+  padding: 0 10px;
+  outline: none;
+}
+
+.priceInput::-webkit-outer-spin-button,
+.priceInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* 
+.priceInput {
+  -moz-appearance: textfield;
+} */
+
+.resetButton {
+  margin-top: 12px;
+  border: none;
+  background: transparent;
+  color: #56695f;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+@media (max-width: 1100px) {
+  .sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 20px 30px;
+  }
+
+  .group {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    grid-template-columns: 1fr;
+  }
+}

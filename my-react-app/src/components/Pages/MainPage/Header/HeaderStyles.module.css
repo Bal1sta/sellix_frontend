@@ -1,0 +1,238 @@
+.containerHeader {
+  /* ТОТ ЖЕ градиент что и HeroSection */
+  background: linear-gradient(135deg, rgba(26, 26, 46, 1) 0%, rgba(39, 55, 70, 1) 60%, rgba(72, 85, 246, 0.3) 100%);
+  backdrop-filter: blur(10px);
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 10000 !important;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100% !important;
+}
+
+.scrolled {
+  /* Чёрный при скролле */
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(25px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 220px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  width: 42px;
+  height: 42px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.logo h2 {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 3rem;
+}
+
+.navbar a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar a:hover {
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255,215,0,0.5);
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #FFD700, #FFA500);
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.rightNavbar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.loginLink {
+  color: rgba(255,255,255,0.8) !important;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.loginLink:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+  color: #fff !important;
+}
+
+.ctaButton {
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #4855f6 0%, #2346ac 100%);
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: white;
+  box-shadow: 0 4px 15px rgba(72,85,246,0.4);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(72,85,246,0.6);
+}
+
+.burgerContainer {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.burgerContainer:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.burgerLine {
+  background: #fff;
+  width: 24px;
+  height: 2.5px;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.burgerContainer.active .burgerLine:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burgerContainer.active .burgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerContainer.active .burgerLine:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.menuPanel {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 0 0 24px 24px;
+  padding: 2rem 0;
+  z-index: 9999;
+  animation: slideDown 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scrolledMenu {
+  background: rgba(0, 0, 0, 0.95) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.menuPanel ul {
+  padding: 0 220px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-end;
+  margin: 0;
+}
+
+.menuPanel p {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.menuPanel a:hover p {
+  color: #FFD700;
+}
+
+.mobileCta {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 1rem;
+  justify-self: end;
+}
+
+@media (max-width: 1400px) {
+  .nav, .menuPanel ul { padding-left: 120px; padding-right: 120px; }
+  .burgerContainer { display: flex; }
+  .navbar, .rightNavbar > *:not(.burgerContainer):not(.ctaButton):not(.loginLink) { display: none; }
+}
+
+@media (max-width: 1100px) {
+  .nav, .menuPanel ul { padding-left: 80px; padding-right: 80px; }
+}
+
+@media (max-width: 550px) {
+  .nav, .menuPanel ul { padding-left: 20px; padding-right: 20px; }
+  .menuPanel ul { align-items: stretch; }
+  .mobileCta { justify-self: stretch; }
+}

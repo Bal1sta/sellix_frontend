@@ -1,0 +1,169 @@
+.card {
+  background: #fbfcfa;
+  /* background: linear-gradient(to right, #f3f3f3, #ececec, #f3f3f3); */
+  border: 1px solid #edf0eb;
+  border-radius: 20px;
+  padding: 34px 36px;
+}
+
+.title {
+  margin: 0 0 26px;
+  font-size: 42px;
+  line-height: 1.1;
+  color: #2f3a38;
+  font-weight: 600;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px 60px;
+}
+
+.infoBlock {
+  max-width: 100%;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.label {
+  display: block;
+  margin: 0 0 14px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #808985;
+  font-weight: 600;
+}
+
+.value {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.45;
+  color: #3c4542;
+  word-break: break-word;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  border: 1px solid #d8dfd7;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 14px 16px;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #2f3a38;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #66776b;
+  box-shadow: 0 0 0 3px rgba(102, 119, 107, 0.12);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.divider {
+  height: 1px;
+  background: #e6ebe5;
+  margin: 40px 0 28px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.editButton,
+.saveButton,
+.cancelButton {
+  padding: 0 20px;
+  min-width: 220px;
+  height: 58px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.editButton,
+.saveButton {
+  border: none;
+  background: #66776b;
+  color: #ffffff;
+}
+
+.editButton:hover,
+.saveButton:hover {
+  background: #55645a;
+}
+
+.cancelButton {
+  padding: 0 20px;
+  border: 1px solid #d5ddd4;
+  background: #ffffff;
+  color: #2f3a38;
+}
+
+.cancelButton:hover {
+  background: #f3f6f2;
+}
+
+.editButton:disabled,
+.saveButton:disabled,
+.cancelButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1100px) {
+  .title {
+    font-size: 34px;
+  }
+
+  .value {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 24px 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .fullWidth {
+    grid-column: auto;
+  }
+
+  .value {
+    font-size: 18px;
+  }
+
+  .editButton,
+  .saveButton,
+  .cancelButton {
+    width: 100%;
+    min-width: unset;
+  }
+}

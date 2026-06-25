@@ -1,0 +1,217 @@
+.app {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  background: #ffffff;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 24px;
+  /* font-size: 2rem; */
+  font-weight: bold;
+  color: var(--color-yellow);
+  padding: 0 24px 40px;
+  /* border-bottom: 1px solid #e2e8f0; */
+  margin-bottom: 20px;
+}
+
+/* Категории */
+.navSection {
+  margin-bottom: 32px;
+}
+
+.navSectionNoBorder {
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 0 12px 24px;
+  padding-top: 20px;
+}
+
+/* Полоска ТОЛЬКО у второй категории */
+.navSection .sectionTitle {
+  border-top: 1px solid #f1f5f9;
+}
+
+/* .configurationDivider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+  margin: 20px 24px 16px;
+} */
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  position: relative;
+  border-radius: 0 12px 12px 0;
+  margin-right: 4px;
+}
+
+.navItem:hover {
+  color: #3730a3;
+  background: #f8fafc;
+}
+
+.navItem.active {
+  color: #6366f1;
+  background: #eef2ff;
+  border-right: 3px solid #6366f1;
+}
+
+.navItem::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+  background: #cbd5e1;
+  border-radius: 4px;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.navItem:hover::before,
+.navItem.active::before {
+  background-color: #a5b4fc;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  overflow: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.pageTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.searchBar {
+  flex: 1;
+  max-width: 400px;
+  position: relative;
+  margin: 0 16px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 20px 12px 48px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  background: #f8fafc;
+  transition: all 0.2s;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+
+.searchBar::before {
+  content: '🔍';
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.userProfile {
+  display: flex;
+  /* align-items: center; */
+  /* gap: 12px; */
+  /* padding: 8px 16px; */
+  /* background: #f8fafc; */
+  /* border-radius: 8px; */
+  /* border: 1px solid #e2e8f0; */
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* .userProfile:hover {
+  background: #f1f5f9;
+} */
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.contentArea {
+  flex: 1;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #64748b;
+  position: relative;
+  overflow: hidden;
+}
+
+.contentArea::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23e2e8f0" opacity="0.3"/><circle cx="75" cy="75" r="1.5" fill="%23f1f5f9" opacity="0.4"/><circle cx="50" cy="10" r="0.8" fill="%23e2e8f0" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+button {
+  color: var(--color-gray);
+}

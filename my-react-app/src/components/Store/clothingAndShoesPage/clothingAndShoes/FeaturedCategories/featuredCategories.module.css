@@ -1,0 +1,146 @@
+.section {
+  width: 1344px;
+  margin: 80px auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 770px 550px;
+  gap: 28px;
+  align-items: stretch;
+  justify-content: center; /* центрирует блок */
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.largeCard {
+  height: 642px;
+}
+
+.smallImageCard {
+  height: 360px;
+}
+
+.textCard {
+  height: 400px;
+  background: #f6f6f2;
+  padding: 42px 32px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* затемнение поверх картинки */
+.overlayDark {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.15) 35%,
+    rgba(0, 0, 0, 0.02) 100%
+  );
+}
+
+.cardContentBottom {
+  position: absolute;
+  left: 32px;
+  bottom: 34px;
+  z-index: 2;
+}
+
+.cardContentBottomSmall {
+  position: absolute;
+  left: 32px;
+  bottom: 26px;
+  z-index: 2;
+}
+
+.largeTitle {
+  margin: 0 0 6px 0;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.largeSubtitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.smallTitle {
+  margin: 0 0 4px 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.smallSubtitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.textCardLabel {
+  margin: 0 0 18px 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #8f8f8f;
+  text-transform: uppercase;
+}
+
+.textCardTitle {
+  margin: 0 0 20px 0;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #2f2f2f;
+}
+
+.textCardDescription {
+  margin: 0 0 36px 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #8f8f8f;
+  text-transform: uppercase;
+}
+
+.textCardButton {
+  font-size: 18px;
+  font-weight: 500;
+  color: #2f2f2f;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
